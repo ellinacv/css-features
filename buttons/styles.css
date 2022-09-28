@@ -1,0 +1,140 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-buttons {
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  padding: 15px 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 30%);
+  grid-gap: 50px 30px;
+}
+
+.button-box {
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: #fcf0f7; */
+}
+
+.button {
+  display: inline-block;
+
+  padding: 15px 30px;
+}
+
+/* Button-glow ---------------------------------------------------- */
+.button-glow {
+  position: relative;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #e38fbc;
+
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.button-glow:hover {
+  background-color: #e38fbc;
+  color: #fff;
+  box-shadow: 0 0 10px #e38fbc, 0 0 30px #e38fbc, 0 0 50px #e38fbc;
+  transition: 0.5s 0.9s;
+}
+
+.button-glow__line {
+  position: absolute;
+  display: block;
+}
+
+/* button-glow__line-top */
+
+.button-glow__line-top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg,transparent,#fff,#e0a8c6);
+}
+
+.button-glow:hover .button-glow__line-top {
+  left: 100%;
+  transition: 1s ease 0.25s;
+}
+
+/* button-glow__line-bottom */
+
+.button-glow__line-bottom {
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(270deg,transparent,#fff,#e0a8c6);
+}
+
+.button-glow:hover .button-glow__line-bottom {
+  left: -100%;
+  transition: 1s ease 0.25s;
+}
+
+/* button-glow__line-left */
+
+.button-glow__line-left {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  
+  background: linear-gradient(0deg,transparent,#fff,#e0a8c6);
+}
+
+.button-glow:hover .button-glow__line-left {
+  bottom: 100%;
+  transition: 1s ease;
+}
+
+/* button-glow__line-right */
+
+.button-glow__line-right {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  
+  background: linear-gradient(180deg,transparent,#fff,#e0a8c6);
+}
+
+.button-glow:hover .button-glow__line-right {
+  top: 100%;
+  transition: 1s ease;
+}
