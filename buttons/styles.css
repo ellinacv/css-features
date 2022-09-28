@@ -150,6 +150,12 @@ a {
 
   border-radius: 5px;
   overflow: hidden;
+
+  transition: box-shadow 0.5s;
+}
+
+.button-run:hover {
+  box-shadow: 0 0 15px #dbc1a9;
 }
 
 .button-run::before {
