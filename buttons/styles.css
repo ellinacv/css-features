@@ -28,7 +28,7 @@ a {
 .content {
   width: 100%;
   height: 100vh;
-  padding: 15px 15px;
+  padding: 15px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 30%);
@@ -46,8 +46,9 @@ a {
 
 .button {
   display: inline-block;
-
   padding: 15px 30px;
+
+  letter-spacing: 3px;
 }
 
 /* Button-glow ---------------------------------------------------- */
@@ -56,7 +57,6 @@ a {
 
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
   color: #e38fbc;
 
   overflow: hidden;
@@ -67,7 +67,7 @@ a {
   background-color: #e38fbc;
   color: #fff;
   box-shadow: 0 0 10px #e38fbc, 0 0 30px #e38fbc, 0 0 50px #e38fbc;
-  transition: 0.5s 0.9s;
+  transition: 1s 0.9s;
 }
 
 .button-glow__line {
@@ -137,4 +137,45 @@ a {
 .button-glow:hover .button-glow__line-right {
   top: 100%;
   transition: 1s ease;
+}
+
+/* Button-run ---------------------------------------------------- */
+
+.button-run {
+  position: relative;
+
+  background-color: #dbc1a9;
+  text-transform: uppercase;
+  color: #fff;
+
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.button-run::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 1.5em;
+  height: 100%;
+
+  background-color: rgba(242, 227, 213, 0.6);
+
+  transform: translateX(-3em) skewX(-45deg);
+  transition: 0.5s;
+}
+
+.button-run:hover::before {
+  animation: move-light 0.8s 0.2s;
+}
+
+@keyframes move-light {
+  from {
+    transform: translateX(-3em) skewX(-45deg);
+  }
+  to {
+    transform: translateX(14em) skewX(-45deg);
+  } 
 }
